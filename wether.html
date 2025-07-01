@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight: bolder;
+      font-size: x-large;
+      background-image: url('weather.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      min-height: 100vh;
+      /* ✅ Use this instead of 100vmin */
+      margin: 0;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: medium;
+        padding-top: 30px;
+      }
+    }
+
+    input,
+    button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+
+    #weather {
+      margin-top: 20px;
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 0.162);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🌤️ Weather App</h1>
+  <input type="text" id="cityInput" placeholder="Enter city name(eg:chennai)" />
+  <button onclick="getWeather()">Get Weather</button>
+
+  <div id="weather"></div>
+
+  <script src="weather.js"></script>
+</body>
+
+</html>
