@@ -80,7 +80,7 @@ function displayWeather(data) {
   weatherDiv.innerHTML = `
     <h2>🌍 Weather in ${data.name}</h2>
     <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">
-    <p>🌡 Temperature: ${temp} °C</p>
+    <p>🌡 Temperature in city: ${temp} °C</p>
     <p>☁ Condition: ${desc}</p>
     <p>💧 Humidity: ${humidity}%</p>
     <p>💨 Wind Speed: ${wind} m/s</p>
