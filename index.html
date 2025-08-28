@@ -7,15 +7,13 @@
   <title>Weather App</title>
   <style>
     body {
-      font-family:Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-weight: bolder;
+      font-style: oblique;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       font-size: x-large;
-      background-image: url('weather.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      min-height: 100vh;
+      background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+      min-height: 95vh;
       margin: 0;
       text-align: center;
     }
@@ -32,21 +30,72 @@
       padding: 10px;
       font-size: 16px;
       margin: 5px;
+      background-color:lightskyblue;
+      border-radius: 20px;
+    }
+    button:hover{
+      background-color: #0b83b3;
+    }
+    #weather {
+      font-size: 25px;
+      background-color: rgba(0, 0, 0, 0.34);
+      margin-right: 12%;
+      margin-left: 12%;
+      margin-top: 5%;
+      border-radius: 20px;
+      background-image: url('./IMAGES/weather.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-weight: bolder;
     }
 
-    #weather {
+    #temperature {
+      /* color: rgb(34, 131, 216); */
+      font-size: 2.3em;
+      font-family: serif;
+    }
+
+    #place {
+      font-size: 2em;
+      font-family: serif;
+    }
+
+    #condition {
+      /* color: rgb(13, 115, 204); */
+      font-size: 1.3em;
+      font-family: serif;
+      font-style: italic;
+    }
+
+    #humidity {
       margin-top: 20px;
-      font-size: 25px;
-      background-color: rgba(0, 0, 0, 0.16);
+      /* color: rgb(3, 112, 207); */
+      font-size: 1em;
+      font-family: serif;
+    }
+    #wind{
+      text-align:right;
+      /* color: rgb(24, 125, 214); */
+      font-size: 1em;
+      font-family: serif;
     }
   </style>
 </head>
+
 <body>
-  <h1>☁️ Weather App</h1>
+  <h1>SKY CAST</h1>
   <input type="text" id="cityInput" placeholder="Enter city name(eg:chennai)" />
   <button onclick="getWeather()">Get Weather</button>
 
-  <div id="weather"></div>
+  <div id="weather">
+    <div id="place"></div>
+    <div id="date"></div>
+    <div id="icon"></div>
+    <div id="temperature"></div>
+    <div id="condition"></div>
+    <div id="humidity"></div>
+  </div>
 
   <script src="weather.js"></script>
 </body>
