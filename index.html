@@ -7,15 +7,14 @@
   <title>Weather App</title>
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bolder;
-      font-style: oblique;
-      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       font-size: x-large;
       background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
       min-height: 95vh;
       margin: 0;
       text-align: center;
+      font-weight: bolder;
+      font-style: oblique;
     }
 
     @media (max-width: 600px) {
@@ -30,65 +29,80 @@
       padding: 10px;
       font-size: 16px;
       margin: 5px;
-      background-color:lightskyblue;
+      background-color: lightskyblue;
       border-radius: 20px;
+      border: none;
+      outline: none;
     }
-    button:hover{
+
+    button {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
       background-color: #0b83b3;
+      transform: scale(1.05);
     }
+
     #weather {
       font-size: 25px;
       background-color: rgba(0, 0, 0, 0.34);
-      margin-right: 12%;
-      margin-left: 12%;
-      margin-top: 5%;
+      margin: 5% 12%;
       border-radius: 20px;
       background-image: url('./IMAGES/weather.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
       font-weight: bolder;
-    }
-
-    #temperature {
-      /* color: rgb(34, 131, 216); */
-      font-size: 2.3em;
-      font-family: serif;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     #place {
-      font-size: 2em;
+      font-size: clamp(16px, 4vw, 32px);
+      font-weight: bold;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    #date {
+      font-size: 0.9em;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    #temperature {
+      font-size: 2.5em;
       font-family: serif;
-      
-  font-size: clamp(16px, 4vw, 32px); 
-  font-weight: bold;
+      margin: 10px 0;
     }
 
     #condition {
-      /* color: rgb(13, 115, 204); */
       font-size: 1.3em;
-      font-family: serif;
       font-style: italic;
-
+      margin-bottom: 15px;
     }
 
-    #humidity {
-      margin-top: 20px;
-      /* color: rgb(3, 112, 207); */
+    /* bottom info container */
+    #bottom-info {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
       font-size: 1em;
-      font-family: serif;
-      
-  font-size: clamp(16px, 4vw, 32px); 
-  font-weight: bold;
+      font-weight: bold;
     }
-    #wind{
-      text-align:right;
-      /* color: rgb(24, 125, 214); */
-      font-size: 1em;
-      font-family: serif;
-       
-  font-size: clamp(16px, 4vw, 32px); 
-  font-weight: bold;
+
+    #humidity,
+    #wind {
+      font-size: clamp(14px, 3vw, 20px);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    #icon img {
+      max-width: 100px;
+      height: auto;
     }
   </style>
 </head>
@@ -104,7 +118,11 @@
     <div id="icon"></div>
     <div id="temperature"></div>
     <div id="condition"></div>
-    <div id="humidity"></div>
+    <!-- humidity and wind inside flexbox -->
+    <div id="bottom-info">
+      <div id="humidity"></div>
+      <div id="wind"></div>
+    </div>
   </div>
 
   <script src="weather.js"></script>
